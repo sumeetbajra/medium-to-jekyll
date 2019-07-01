@@ -5,10 +5,11 @@ A simple script to convert exported Medium posts to Jekyll posts. The script tak
 1. Iterate through all .html files in the Medium exported posts directory
 2. Download the source images in the img tags from Medium posts and output them to an `img/` directory in the Jekyll root directory.
 3. Updates all of the image sources in your blog post from Medium CDN URLs to the absolute path of your Jekyll directory (e.g. /img/filename.jpg)
-4. Strips unnecessary HTML from the Medium posts (header, footer, CSS, etc.)
-5. Converts the HTML into Markdown (using [markdownify](https://github.com/matthewwithanm/python-markdownify))
-6. Formats the Jekyll frontmatter and prepends it to the converted Markdown
-7. Writes the Markdown files into the Jekyll `_posts/` directory with the proper formatting
+4. Sets the first image in the blog as the featured image
+5. Strips unnecessary HTML from the Medium posts (header, footer, CSS, etc.)
+6. Converts the HTML into Markdown (using [html2text](https://pypi.org/project/html2text/))
+7. Formats the Jekyll frontmatter and prepends it to the converted Markdown
+8. Writes the Markdown files into the Jekyll `_posts/` directory with the proper formatting
 
 ## Setup
 
@@ -21,7 +22,8 @@ pip install -r requirements.txt
 ## Usage
 
 ```
-python medium_to_jekyll.py <path-to-Medium-posts-directory> <path-to-Jekyll-root-directory>
+python medium_to_jekyll.py [-h] [--author [AUTHOR]] [--layout [LAYOUT]] [--category [CATEGORY]]
+                           --source SOURCE --dest DEST
 ```
 
 ## Configuring Jekyll

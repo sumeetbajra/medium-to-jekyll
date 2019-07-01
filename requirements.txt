@@ -3,7 +3,8 @@ certifi==2018.10.15
 chardet==3.0.4
 idna==2.7
 lxml==4.2.5
-markdownify==0.4.1
+html2text==2018.1.9
 requests==2.20.1
 six==1.11.0
 urllib3==1.24.1
+argparse==1.4.0
