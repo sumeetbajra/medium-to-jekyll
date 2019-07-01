@@ -20,7 +20,7 @@ POST_DIRECTORY = '_posts'
 IMG_DIRECTORY = 'img'
 
 def usage():
-    print 'Usage: %s --source <path-to-medium-articles> --destination <path-to-jekyll-root-directory> --author <author-name> --layout <layout-name> --category <category-name>' % sys.argv[0]
+    print 'Usage: %s --source <path-to-Medium-posts-directory> --destination <path-to-jekyll-root-directory> --author <author-name> --layout <layout-name> --category <category-name>' % sys.argv[0]
 
 def get_featured_img(doc):
     if not doc.xpath('//img'):

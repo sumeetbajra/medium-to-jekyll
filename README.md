@@ -22,8 +22,8 @@ pip install -r requirements.txt
 ## Usage
 
 ```
-python medium_to_jekyll.py [-h] [--author [AUTHOR]] [--layout [LAYOUT]] [--category [CATEGORY]]
-                           --source SOURCE --dest DEST
+python medium_to_jekyll.py [-h] --source <path-to-Medium-posts-directory> --destination <path-to-jekyll-root-directory> 
+                          [--author <author-name>] [--layout <layout-name>] [--category <category-name>]
 ```
 
 ## Configuring Jekyll
