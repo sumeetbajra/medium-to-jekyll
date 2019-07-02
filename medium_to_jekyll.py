@@ -20,7 +20,7 @@ POST_DIRECTORY = '_posts'
 IMG_DIRECTORY = 'img'
 
 def usage():
-    print 'Usage: %s --source <path-to-Medium-posts-directory> --destination <path-to-jekyll-root-directory> --author <author-name> --layout <layout-name> --category <category-name>' % sys.argv[0]
+    print 'Usage: %s --source <path-to-Medium-posts-directory> --dest <path-to-jekyll-root-directory> --author <author-name> --layout <layout-name> --category <category-name>' % sys.argv[0]
 
 def get_featured_img(doc):
     if not doc.xpath('//img'):
@@ -41,7 +41,7 @@ def save_images(doc, image_directory):
             with open(filepath, 'wb') as w:
                 r.raw.decode_content = True
                 shutil.copyfileobj(r.raw, w)
-            img.attrib['src'] = '/%s/%s' % ('/'.join(image_directory.split('/')[-2:]), filename)
+            img.attrib['src'] = '/%s/%s' % ('/'.join(image_directory.split('/')[-1:]), filename)
         else:
             print 'Error processing image (%s): %d' % (url, r.status_code)
 
@@ -93,7 +93,7 @@ def main():
         print 'Invalid Medium directory'
         sys.exit(-1)
 
-    jekyll_directory = args.destination
+    jekyll_directory = args.dest
     if not os.path.isdir(jekyll_directory):
         usage()
         print 'Invalid Jekyll directory'
